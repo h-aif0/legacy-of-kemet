@@ -1,0 +1,562 @@
+:root {
+    --gold: #C8A45D;
+}
+
+body {
+    background: #0E0E0E;
+}
+
+section {
+    padding: clamp(60px, 10vw, 120px) 0;
+}
+
+.glass-nav {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+    max-width: 1200px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(30px);
+    border: 1px dashed rgba(200, 164, 93, .35);
+    border-radius: 60px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, .35);
+    z-index: 99999;
+}
+
+.logo {
+    font-family: "Cinzel", serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    gap: 12px;
+    text-align: center;
+
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: .4s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold);
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--gold);
+    font-size: 24px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.contact {
+    border: 1px dashed var(--gold);
+    border-radius: 15px;
+    background: rgba(37, 36, 36, 0.705);
+    padding: 6px 18px;
+}
+
+.slider-section {
+    padding-top: 100px;
+    padding-bottom: 0;
+    background: #0f0f0f;
+}
+
+.pharaoh-slider-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    background: #0f0f0f;
+    position: relative;
+}
+
+.pharaoh-slider-container::before,
+.pharaoh-slider-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.pharaoh-slider-container::before {
+    left: 0;
+    background: linear-gradient(to right, #0f0f0f, transparent);
+}
+
+.pharaoh-slider-container::after {
+    right: 0;
+    background: linear-gradient(to left, #0f0f0f, transparent);
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    animation: sliderScroll 30s linear infinite;
+    width: max-content;
+}
+
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+.slider-item {
+    flex-shrink: 0;
+    width: 180px;
+    text-align: center;
+    transition: .4s;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px dashed rgba(200, 164, 93, .3);
+    transition: .4s;
+}
+
+.slider-item:hover img {
+    transform: scale(1.08);
+    border-color: #C8A45D;
+}
+
+.slider-item span {
+    display: block;
+    margin-top: 10px;
+    color: #C8A45D;
+    font-family: "Cinzel", serif;
+    font-size: 0.9rem;
+}
+
+@keyframes sliderScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.pharaohs-section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    background: #0f0f0f;
+    position: relative;
+    z-index: 1;
+}
+
+.section-subtitle {
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.explore-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: #fff;
+    margin: 10px 0 5px;
+    font-family: "Cinzel", serif;
+}
+
+.typing-text {
+    color: #C8A45D;
+    font-family: "Cinzel", serif;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    min-height: 2em;
+    letter-spacing: 2px;
+}
+
+.section-desc {
+    color: #ccc;
+    max-width: 700px;
+    margin: 10px auto 0;
+}
+
+.video-section {
+    padding: 40px 0 60px;
+    background: #0f0f0f;
+}
+
+.video-title {
+    font-family: "Cinzel", serif;
+    color: #fff;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.video-title span {
+    color: #c8a45d;
+}
+
+.gold-line {
+    width:100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c8a45d, transparent);
+    margin: 10px auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/6;
+    object-fit: cover;
+}
+
+.video-wrapper video::-webkit-media-controls {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-panel {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-timeline {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+.video-wrapper video::-webkit-media-controls-toggle-closed-captions-button {
+    display: none !important;
+}
+.video-wrapper video::-moz-media-controls {
+    display: none !important;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.video-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    width: 90%;
+    pointer-events: none;
+}
+
+.video-caption h3 {
+    font-family: "Cinzel", serif;
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+}
+
+.video-caption h3 span {
+    color: #c8a45d;
+}
+
+.video-caption p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    letter-spacing: 2px;
+}
+
+.pharaoh-card {
+    background: #171717;
+    border: 2px dashed rgba(200, 164, 93, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+}
+
+.pharaoh-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 5px 20px rgba(200, 164, 93, 0.15);
+    border-color: #C8A45D;
+}
+
+.pharaoh-image {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.pharaoh-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: .5s;
+    display: block;
+}
+
+.pharaoh-card:hover .pharaoh-image img {
+    transform: scale(1.02);
+}
+
+.pharaoh-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    gap: 3px;
+    backdrop-filter: blur(5px);
+}
+
+.pharaoh-rating i {
+    color: #FFD700;
+    font-size: 0.8rem;
+}
+
+.pharaoh-content {
+    padding: 20px 22px 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pharaoh-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #fff;
+    font-family: "Cinzel", serif;
+}
+
+.pharaoh-content .nickname {
+    font-size: 0.8rem;
+    color: #c8a45d;
+    font-weight: normal;
+}
+
+.pharaoh-content .pulse-icon {
+    display: inline-block;
+    animation: pulseIcon 2s ease-in-out infinite;
+    color: #C8A45D;
+    margin-left: 8px;
+    font-size: 0.7rem;
+}
+
+@keyframes pulseIcon {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.6;
+    }
+}
+
+.pharaoh-details {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.pharaoh-details p {
+    color: #cfcfcf;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.pharaoh-details p strong {
+    color: #fff;
+    font-weight: 600;
+    min-width: 100px;
+}
+
+.pharaoh-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pharaoh-actions .papyrus-btn {
+    flex: 1;
+    padding: 8px 22px;
+    font-size: 0.9rem;
+    background-image: url('../images/papyrs-btn.webp');
+    background-position: center;
+    background-size: cover;
+    color: #222;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: .5s;
+    border: none;
+    cursor: pointer;
+}
+
+.pharaoh-actions .papyrus-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(200, 164, 93, .3);
+}
+
+.share-btn {
+    background: rgba(200, 164, 93, .15);
+    border: 1px solid rgba(200, 164, 93, .3);
+    color: #C8A45D;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .4s;
+    font-size: 1rem;
+}
+
+.share-btn:hover {
+    background: #C8A45D;
+    color: #000;
+    transform: rotate(180deg);
+}
+
+
+@media (max-width: 991px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-item {
+        width: 120px;
+    }
+    .slider-item img {
+        height: 140px;
+    }
+    .pharaoh-image img {
+        height: 200px;
+    }
+    .pharaoh-content {
+        padding: 16px 18px 20px;
+    }
+    .pharaoh-content h3 {
+        font-size: 1.2rem;
+    }
+    .pharaoh-details p {
+        font-size: 0.85rem;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-box a,
+    .footer-box p {
+        text-align: center;
+    }
+    .footer-top h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-nav {
+        border-radius: 30px;
+        padding: 5px 12px;
+        top: 5px;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+     .navbar-toggler {
+        font-size: 20px;
+    }
+     .navbar-nav a{
+        font-size: 1rem;
+    }
+    
+    .slider-item {
+        width: 100px;
+    }
+    .slider-item img {
+        height: 120px;
+    }
+    .pharaoh-image img {
+        height: 220px;
+    }
+    .pharaoh-content h3 {
+        font-size: 1.1rem;
+    }
+    .pharaoh-actions {
+        flex-direction: column;
+    }
+    .pharaoh-actions .papyrus-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .share-btn {
+        width: 100%;
+        border-radius: 30px;
+    }
+    .video-caption h3 {
+        font-size: 1.2rem;
+    }
+    .video-caption p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .glass-nav {
+        border-radius: 30px;
+        padding: 5px 12px;
+        top: 5px;
+    }
+    .logo{
+        font-size: 0.9rem;
+    }
+     .navbar-toggler {
+        font-size: 20px;
+    }
+    .navbar-nav a{
+        font-size: 1rem;
+    }
+
+}
